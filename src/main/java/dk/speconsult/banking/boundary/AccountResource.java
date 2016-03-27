@@ -1,11 +1,9 @@
 package dk.speconsult.banking.boundary;
 
-import dk.speconsult.banking.control.ViewAccounts;
-import dk.speconsult.banking.control.ViewAccountsRequest;
-import dk.speconsult.banking.domain.Account;
+import dk.speconsult.banking.control.*;
 
 import javax.inject.Inject;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
 import java.util.List;
 
 /**
@@ -15,10 +13,25 @@ import java.util.List;
 public class AccountResource {
 
     @Inject
+    MakeDeposit makeDeposit;
+
+    @Inject
     ViewAccounts viewAccounts;
 
-    public List<Account> fetchAccountsForUser(String ssn) {
+    @GET
+    @Path("{ssn}")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public List<AccountDTO> fetchAccountsForUser(@PathParam("ssn") String ssn) {
         ViewAccountsRequest request = new ViewAccountsRequest(ssn);
         return viewAccounts.execute(request);
+    }
+
+    @POST
+    @Path("account/{id}")
+    @Consumes("application/json")
+    public void makeDeposit(@PathParam("id") String accountNumber, long amount, String description) {
+        MakeDepositRequest request = new MakeDepositRequest(accountNumber, amount, description);
+        makeDeposit.execute(request);
     }
 }

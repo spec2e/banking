@@ -33,6 +33,9 @@ public class Account {
         return -1;
     }
 
+    public long calculateBalance() {
+        return -1;
+    }
 
     public List<Posting> getPostings() {
         return postings;

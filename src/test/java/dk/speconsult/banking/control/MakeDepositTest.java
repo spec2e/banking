@@ -17,6 +17,12 @@ import static org.junit.Assert.assertEquals;
  */
 public class MakeDepositTest {
 
+    /**
+     *
+     * This class will contain a large number of tests, measuring everything from interests to negative test scenarios.
+     *
+     */
+
     private MakeDeposit makeDeposit;
     private String depositDescription;
 
