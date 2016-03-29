@@ -1,8 +1,5 @@
 package dk.speconsult.banking.control;
 
-/**
- * Created by zapp on 27/03/16.
- */
 public class ViewAccountsRequest {
     String ssn;
 

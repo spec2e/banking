@@ -2,9 +2,6 @@ package dk.speconsult.banking.domain;
 
 import java.util.Date;
 
-/**
- * Created by zapp on 27/03/16.
- */
 public class Posting {
     private Amount amount;
     private String description;

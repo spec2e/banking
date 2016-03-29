@@ -6,9 +6,6 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import java.util.List;
 
-/**
- * Created by zapp on 27/03/16.
- */
 @Path("accounts")
 public class AccountResource {
 

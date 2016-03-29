@@ -4,7 +4,7 @@ import dk.speconsult.banking.domain.Account;
 import dk.speconsult.banking.domain.AccountNumber;
 import dk.speconsult.banking.domain.Posting;
 import dk.speconsult.banking.domain.SSN;
-import dk.speconsult.banking.interfaces.AccountDatabase;
+import dk.speconsult.banking.domain.repositories.AccountRepository;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,9 +12,6 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by zapp on 27/03/16.
- */
 public class MakeDepositTest {
 
     /**
@@ -29,7 +26,7 @@ public class MakeDepositTest {
     @Before
     public void setUp() throws Exception {
         makeDeposit = new MakeDeposit();
-        makeDeposit.accountDatabase = new AccountDatabase() {
+        makeDeposit.accountRepository = new AccountRepository() {
             public void saveAccount(Account account) {
                 Posting posting = account.getPostings().get(0);
                 depositDescription = posting.getDescription();

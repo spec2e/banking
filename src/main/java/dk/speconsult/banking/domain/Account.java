@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by zapp on 27/03/16.
- */
 public class Account {
 
     AccountNumber accountNumber;

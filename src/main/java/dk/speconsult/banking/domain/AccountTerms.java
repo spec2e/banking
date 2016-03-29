@@ -2,9 +2,6 @@ package dk.speconsult.banking.domain;
 
 import java.util.List;
 
-/**
- * Created by zapp on 27/03/16.
- */
 public class AccountTerms {
 
     private List<InterestRate> rates;

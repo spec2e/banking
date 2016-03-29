@@ -1,16 +1,13 @@
-package dk.speconsult.banking.dk.speconsult.banking.gateway;
+package dk.speconsult.banking.gateway;
 
 import dk.speconsult.banking.domain.Account;
 import dk.speconsult.banking.domain.AccountNumber;
 import dk.speconsult.banking.domain.SSN;
-import dk.speconsult.banking.interfaces.AccountDatabase;
+import dk.speconsult.banking.domain.repositories.AccountRepository;
 
 import java.util.List;
 
-/**
- * Created by zapp on 27/03/16.
- */
-public class AccountDatabaseGatewayImpl implements AccountDatabase {
+public class AccountRepositoryDatabase implements AccountRepository {
 
 
     public List<Account> fetchAccountsForUser(SSN ssn) {

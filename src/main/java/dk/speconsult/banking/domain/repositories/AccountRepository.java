@@ -1,4 +1,4 @@
-package dk.speconsult.banking.interfaces;
+package dk.speconsult.banking.domain.repositories;
 
 import dk.speconsult.banking.domain.Account;
 import dk.speconsult.banking.domain.AccountNumber;
@@ -6,10 +6,8 @@ import dk.speconsult.banking.domain.SSN;
 
 import java.util.List;
 
-/**
- * Created by zapp on 27/03/16.
- */
-public interface AccountDatabase {
+
+public interface AccountRepository {
 
     void saveAccount(Account account);
 
